@@ -26,6 +26,8 @@ set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 
+au BufNewFile,BufRead *.tikz set filetype=tex
+
 " Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
 " This offers intelligent C++ completion when typing ‘.’ ‘->’ or <C-o>
 " Load standard tag files
@@ -33,7 +35,7 @@ set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
 set tags+=~/.vim/tags/qt4
-
+set tags=./tags,tags;$HOME
 
 " Enhanced keyboard mappings
 "
@@ -202,3 +204,11 @@ function! MyTabLabel(n)
   let winnr = tabpagewinnr(a:n)
   return bufname(buflist[winnr - 1])
 endfunction
+
+au BufRead /tmp/mutt-* set tw=72
+au BufRead /tmp/neomutt-* set tw=72
+
+map <C-K> :py3f /home/sakthi/Downloads/clang-master/tools/clang-format/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /home/sakthi/Downloads/clang-master/tools/clang-format/clang-format.py<cr>
+
+set wrap linebreak
