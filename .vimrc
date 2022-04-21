@@ -16,7 +16,7 @@ set expandtab        " expand tabs to spaces
 " set textwidth=120
 set wrap
 " turn syntax highlighting on
-" set t_Co=256
+set t_Co=256
 " syntax on
 colorscheme wombat256
 " turn line numbers on
